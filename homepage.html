@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EcoTrack - Home</title>
+<!-- Add to head -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+<!-- Add to head -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -58,13 +58,14 @@
     }
 
     .welcome-text {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5em;
-      font-style: italic;
-      color: #004d40;
-      text-align: center;
-      margin-top: 40px;
-    }
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 2.5em;
+  font-style: italic;
+  color: #1f7668;
+  text-align: center;
+  margin-top: 40px;
+  text-shadow: 0 0 8px #a6ceca, 0 0 16px #a9e6e0, 0 0 24px #a8d6d1;
+}
 
     .container {
       display: flex;
@@ -89,35 +90,53 @@
       text-align: center;
     }
 
-    .flowchart-nav {
+    .flowchart-nav ul {
+      padding-left: 0;
+    }
+
+    .flowchart-nav li {
+      list-style: none;
+      margin-bottom: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .flow-step {
+    .flowchart-nav a {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      align-items: center;
       background-color: white;
       color: #00796b;
       padding: 12px 18px;
-      margin: 10px 0;
       width: 100%;
       border-radius: 10px;
-      text-align: center;
       font-weight: bold;
-      text-decoration: none;
+      justify-content: center;
       transition: background 0.3s, transform 0.2s;
-      position: relative;
     }
 
-    .flow-step:hover {
+    .flowchart-nav a:hover {
       background-color: #b2dfdb;
       transform: scale(1.05);
     }
 
-    .arrow {
+    .flowchart-nav i {
+      margin-right: 8px;
       font-size: 1.2em;
+    }
+
+    .flowchart-nav small {
+      color: #777;
+      margin-left: 5px;
+      font-weight: normal;
+    }
+
+    .arrow-down {
+      font-size: 1.5em;
       color: white;
-      margin: 8px 0;
+      margin: 5px 0;
     }
 
     .content {
@@ -134,6 +153,13 @@
       color: #004d40;
       text-align: center;
     }
+    .flow-img img {
+  width: 300px; /* You can adjust this value to be smaller or larger */
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
     .flow-img {
       display: flex;
@@ -141,11 +167,7 @@
       margin-top: 40px;
     }
 
-    .flow-img img {
-      max-width: 80%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+  
 
     .cta {
       display: block;
@@ -253,28 +275,38 @@
     <div class="logo">EcoTrack</div>
     <button class="logout">Logout</button>
   </header>
-
-  <div class="welcome-text">Welcome to EcoTrack</div>
+  <div class="welcome-text">🌍 Welcome to EcoTrack 🔋</div>
 
   <section class="container">
     <aside class="sidebar">
       <h2>Trace Your Audit</h2>
       <div class="flowchart-nav">
-        <a href="meter.html" class="flow-step">1. Meter Read</a>
-        <div class="arrow">↓</div>
-        <a href="dashboard.html" class="flow-step">2. Dashboard</a>
-        <div class="arrow">↓</div>
-        <a href="audit.html" class="flow-step">3. Audit Report</a>
-        <div class="arrow">↓</div>
-        <a href="recommend.html" class="flow-step">4. Smart Recommendations</a>
-        <div class="arrow">↓</div>
-        <a href="savings.html" class="flow-step">5. Saving Potential</a>
+        <ul>
+          <li>
+            <a href="meterread.html"><i class="fas fa-bolt"></i>Meter Read<small>💡 Track your usage</small></a>
+            <span class="arrow-down">↓</span>
+          </li>
+          <li>
+            <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i>Dashboard<small>📊 Your energy summary</small></a>
+            <span class="arrow-down">↓</span>
+          </li>
+          <li>
+            <a href="audit-report.html"><i class="fas fa-file-alt"></i>Audit Report<small>📑 Analyze your performance</small></a>
+            <span class="arrow-down">↓</span>
+          </li>
+          <li>
+            <a href="smart-recommendations.html"><i class="fas fa-lightbulb"></i>Smart Recommendations<small>💡 Optimize your usage</small></a>
+            <span class="arrow-down">↓</span>
+          </li>
+          <li>
+            <a href="savingpotential.html"><i class="fas fa-chart-line"></i>Saving Potential<small>💰 Discover how much you can save</small></a>
+          </li>
+        </ul>
       </div>
     </aside>
 
     <main class="content">
       <h1>Track Your Energy Flow</h1>
-
       <div class="flow-img">
         <img src="temp2.jpg" alt="Illustration of energy saving" />
       </div>
